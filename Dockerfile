@@ -13,7 +13,7 @@ ENV JAVA_BUILD 181
 
 RUN apt-get update && apt-get install -y curl unzip && \
     (curl -L -k -b "oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION}+${JAVA_BUILD}/jdk-${JAVA_VERSION}_linux-x64_bin.tar.gz | gunzip -c | tar x) \
-    && mv /jdk1.${JAVA_VERSION}.0_${JAVA_UPDATE} /jdk && cd /tmp && \
+    && mv /jdk-${JAVA_VERSION} /jdk && cd /tmp && \
     curl -O https://letsencrypt.org/certs/isrgrootx1.der && \
     curl -O https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.der && \
     curl -O https://letsencrypt.org/certs/lets-encrypt-x4-cross-signed.der && \
