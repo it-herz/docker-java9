@@ -28,4 +28,4 @@ RUN apt-get update && apt-get install -y curl unzip && \
     keytool -importcert -alias lets-encrypt-x2-cross-signed -keystore /jdk/lib/security/cacerts -storepass changeit -noprompt -file /tmp/lets-encrypt-x2-cross-signed.der && \
     keytool -importcert -alias lets-encrypt-x3-cross-signed -keystore /jdk/lib/security/cacerts -storepass changeit -noprompt -file /tmp/lets-encrypt-x3-cross-signed.der && \
     keytool -importcert -alias lets-encrypt-x4-cross-signed -keystore /jdk/lib/security/cacerts -storepass changeit -noprompt -file /tmp/lets-encrypt-x4-cross-signed.der && \
-    apt-get clean && rm -rf /var/lib/apt/lists/* && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
