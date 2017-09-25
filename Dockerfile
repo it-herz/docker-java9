@@ -29,8 +29,3 @@ RUN apt-get update && apt-get install -y curl unzip && \
     keytool -importcert -alias lets-encrypt-x3-cross-signed -keystore /jdk/lib/security/cacerts -storepass changeit -noprompt -file /tmp/lets-encrypt-x3-cross-signed.der && \
     keytool -importcert -alias lets-encrypt-x4-cross-signed -keystore /jdk/lib/security/cacerts -storepass changeit -noprompt -file /tmp/lets-encrypt-x4-cross-signed.der && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
-
-    cd /tmp && rm *.der && curl -L -O -k -b "oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jce/${JCE_VERSION}/jce_policy-${JCE_VERSION}.zip \
-    && unzip jce_policy-${JCE_VERSION}.zip \
-    && mv UnlimitedJCEPolicyJDK${JAVA_VERSION}/*.jar /jdk/jre/lib/security/ \
-    && rm -fR jce_policy-${JCE_VERSION}.zip UnlimitedJCEPolicyJDK${JAVA_VERSION}
