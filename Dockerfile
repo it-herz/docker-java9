@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y curl unzip && \
     curl -O https://letsencrypt.org/certs/letsencryptauthorityx1.der && \
     curl -O https://letsencrypt.org/certs/lets-encrypt-x2-cross-signed.der && \
     curl -O https://letsencrypt.org/certs/letsencryptauthorityx2.der && \
-    keytool -importcert -alias isrgrootx1 -keystore /jdk/jre/lib/security/cacerts -storepass changeit -noprompt -file /tmp/isrgrootx1.der && \
+    keytool -importcert -alias isrgrootx1 -keystore /jdk/lib/security/cacerts -storepass changeit -noprompt -file /tmp/isrgrootx1.der && \
     keytool -importcert -alias letsencryptauthorityx1 -keystore /jdk/lib/security/cacerts -storepass changeit -noprompt -file /tmp/letsencryptauthorityx1.der && \
     keytool -importcert -alias letsencryptauthorityx2 -keystore /jdk/lib/security/cacerts -storepass changeit -noprompt -file /tmp/letsencryptauthorityx2.der && \
     keytool -importcert -alias lets-encrypt-x1-cross-signed -keystore /jdk/lib/security/cacerts -storepass changeit -noprompt -file /tmp/lets-encrypt-x1-cross-signed.der && \
